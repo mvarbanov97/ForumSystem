@@ -2,7 +2,10 @@
 {
     using System.Collections.Generic;
 
-    public class IndexViewModel
+    using ForumSystem.Data.Models;
+    using ForumSystem.Services.Mapping;
+
+    public class IndexViewModel : IMapFrom<Category>
     {
         public IEnumerable<IndexCategoryViewModel> Categories { get; set; }
     }

@@ -22,9 +22,10 @@ namespace ForumSystem.Web.Controllers
 
         public IActionResult Index()
         {
-            var viewModel = new IndexViewModel();
-            var categories = this.categoriesService.GetAll<IndexCategoryViewModel>();
-            viewModel.Categories = categories;
+            var viewModel = new IndexViewModel()
+            {
+                Categories = this.categoriesService.GetAll<IndexCategoryViewModel>(),
+            };
 
             return this.View(viewModel);
         }

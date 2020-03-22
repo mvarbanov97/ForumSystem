@@ -49,8 +49,16 @@
 
             services.AddControllersWithViews(options =>
             {
-                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()); 
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
             });
+
+            services.AddAntiforgery(options =>
+            {
+                // options.FormFieldName = "AntiforgeryFieldname";
+                options.HeaderName = "X-CSRF-TOKEN";
+                // options.SuppressXFrameOptionsHeader = false;
+            });
+
             services.AddRazorPages();
 
             services.AddSingleton(this.configuration);

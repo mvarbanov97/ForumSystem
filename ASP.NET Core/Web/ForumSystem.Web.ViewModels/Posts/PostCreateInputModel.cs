@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text;
 
     public class PostCreateInputModel
     {
@@ -20,6 +19,5 @@
         public IEnumerable<CategoryDropDownViewModel> Categories { get; set; }
 
         // public IEnumerable<SelectListItem> SelectCategories => this.Categories.Select(x => x.Name);
-
     }
 }

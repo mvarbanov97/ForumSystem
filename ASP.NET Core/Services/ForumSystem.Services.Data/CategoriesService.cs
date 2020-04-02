@@ -28,7 +28,7 @@
             return query.To<T>().ToList();
         }
 
-        public T GetByName<T>(string name)
+        public T GetByName<T>(string name, int? take = null, int skip = 0)
         {
             var category = this.categoryRepository.All().Where(x => x.Name == name)
                 .To<T>().FirstOrDefault();

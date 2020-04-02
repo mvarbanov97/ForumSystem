@@ -29,7 +29,6 @@
             this.userManager = userManager;
         }
 
-
         public IActionResult ById(int id)
         {
             var postViewModel = this.postsService.GetById<PostViewModel>(id);

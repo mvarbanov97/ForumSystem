@@ -29,14 +29,12 @@
             await this.commentsRepository.SaveChangesAsync();
         }
 
-        public bool IsInPostId(int firstCommentId, int secondCommentId)
+        public bool IsInPostId(int commentId, int postId)
         {
-            var firstCommentPostId = this.commentsRepository.All().Where(x => x.Id == firstCommentId)
-                .Select(x => x.PostId).FirstOrDefault();
-            var secondCommentPostId = this.commentsRepository.All().Where(x => x.Id == secondCommentId)
+            var firstCommentPostId = this.commentsRepository.All().Where(x => x.Id == commentId)
                 .Select(x => x.PostId).FirstOrDefault();
 
-            return firstCommentPostId == secondCommentPostId;
+            return firstCommentPostId == postId;
         }
     }
 }

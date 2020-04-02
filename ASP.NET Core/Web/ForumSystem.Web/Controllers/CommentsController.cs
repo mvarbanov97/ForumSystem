@@ -26,7 +26,10 @@
 
             if (parentId.HasValue)
             {
-                this.commentsService.IsInSamePost()
+                if (!this.commentsService.IsInPostId(parentId.Value, input.PostId))
+                {
+                    return this.BadRequest();
+                }
             }
 
             var userId = this.userManager.GetUserId(this.User);

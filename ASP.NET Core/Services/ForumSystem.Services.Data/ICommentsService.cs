@@ -9,6 +9,6 @@ namespace ForumSystem.Services.Data
     {
         Task Create(int postId, string userId, string content, int? parentId = null);
 
-        bool IsInPostId(int firstCommentId, int secondCommentId);
+        bool IsInPostId(int commentId, int postId);
     }
 }

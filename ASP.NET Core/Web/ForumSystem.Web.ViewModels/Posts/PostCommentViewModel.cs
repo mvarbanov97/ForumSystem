@@ -18,6 +18,6 @@
 
         public string SanitizedContent => new HtmlSanitizer().Sanitize(this.Content);
 
-        public string UserUserNname { get; set; }
+        public string UserUserName { get; set; }
     }
 }
